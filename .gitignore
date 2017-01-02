@@ -57,8 +57,9 @@ docs/_build/
 target/
 
 # Data Files
-data/dataset
-data/features
+data/dataset/*
+data/features/*
+data/model/*
 
 # gedit crap
 *~
