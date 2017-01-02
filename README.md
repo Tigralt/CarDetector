@@ -42,5 +42,4 @@ model_path: ../data/models/svm.model
 
 ## TODO
 
-* Faster NMS code.
 * Add bootstrapping (Hard Negative Mining) code.
