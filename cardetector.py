@@ -85,5 +85,8 @@ if __name__ == "__main__":
                     cv2.rectangle(clone, (int(x_tl), int(y_tl)), (int(x_tl+w), int(y_tl+h)), (0, 0, 255), thickness=2)
                 cv2.imshow("Original", im)
                 cv2.imshow("Detection", clone)
-                cv2.waitKey()
-                cv2.destroyAllWindows()
+                if cv2.waitKey() & 0xFF == ord('q'):
+                    cv2.destroyAllWindows()
+                    break
+                else:
+                    cv2.destroyAllWindows()
