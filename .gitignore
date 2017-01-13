@@ -59,7 +59,7 @@ target/
 # Data Files
 data/dataset/*
 data/features/*
-data/model/*
+data/models/*
 
 # gedit crap
 *~
