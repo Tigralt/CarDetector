@@ -2,7 +2,7 @@
 An object detector framework optimized for car detection.
 This framework is based on the work of [**bikz05**](https://github.com/bikz05/object-detector.git)
 
-The database used for this project is the [**UUIC Car Database**](http://cogcomp.cs.illinois.edu/Data/Car/README.txt).
+The database used for this project is the [**UUIC Car Database**](http://cogcomp.cs.illinois.edu/Data/Car/).
 You can download it [here](http://l2r.cs.uiuc.edu/~cogcomp/Data/Car/CarData.tar.gz)
 
 ## Basic Usage
