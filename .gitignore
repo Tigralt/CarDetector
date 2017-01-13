@@ -58,8 +58,11 @@ target/
 
 # Data Files
 data/dataset/*
+!data/dataset/.gitkeep
 data/features/*
+!data/features/.gitkeep
 data/models/*
+!data/models/.gitkeep
 
 # gedit crap
 *~
