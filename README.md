@@ -93,7 +93,7 @@ model_path: data/models/svm.model
 ### About the modules
 
 * `classifier.py` -- This module is used to create the classifier needed to train and predict.
-* `config.py` -- Imports the configuration variables from `config.cfg`.
+* `config.py` -- Imports the configuration variables from the configuration file.
 * `features.py` -- This module is used to extract features (HOG,...) of the images.
 * `nms.py` -- This module performs Non Maxima Suppression.
 * `slidingwindow.py` -- This module performs the sliding window.
