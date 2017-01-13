@@ -35,3 +35,4 @@ class SlidingWindow(object):
         for y in range(0, image.shape[0], self._step_size[1]):
             for x in range(0, image.shape[1], self._step_size[0]):
                 yield (x, y, image[y:(y + self._window_size[1]), x:(x + self._window_size[0])])
+

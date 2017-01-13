@@ -18,8 +18,14 @@ class FeaturesExtractor(object):
         self.__makedir__(self._negative_features_path)
 
     def run(self):
+        self.__empty_directory__(self._positive_features_path)
+        self.__empty_directory__(self._negative_features_path)
         self.__compute__(self._positive_image_path, self._positive_features_path)
         self.__compute__(self._negative_image_path, self._negative_features_path)
+
+    def __empty_directory__(self, dir_path):
+        for file_path in glob.glob(os.path.join(dir_path, "*")):
+            os.remove(file_path)
 
     def __makedir__(self, dir_path):
         if not dir_path:
@@ -46,23 +52,5 @@ class FeaturesExtractor(object):
                 self._params["visualize"],
                 self._params["normalize"] ),
             }
-        return switch.get(self._descriptor_type) 
-        
-        
+        return switch.get(self._descriptor_type)
 
-if __name__ == "__main__":
-    # Example
-    pospath = "../data/dataset/CarData/pos"
-    negpath = "../data/dataset/CarData/neg"
-    posfeatpath = "../data/features/pos"
-    negfeatpath = "../data/features/neg"
-    ef = ExtractFeatures(pospath=pospath,
-                         negpath=negpath,
-                         posfeatpath=posfeatpath,
-                         negfeatpath=negfeatpath,
-                         orientations=9,
-                         pixels_per_cell=[8,8],
-                         cells_per_block=[3,3],
-                         visualize=False,
-                         normalize=True)
-    ef.run()

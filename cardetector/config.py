@@ -48,3 +48,4 @@ class Config(dict):
     def read(self, filename):
         self._parser.read(filename)
         self.__parse__(self._parser, self._data)
+

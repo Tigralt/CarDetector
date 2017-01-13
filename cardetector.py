@@ -48,7 +48,7 @@ if __name__ == "__main__":
         TIMER.stop()
 
         if args.verbose:
-            TIMER.print("Extracting features took {}ms.")
+            TIMER.print("Extracting features took {} ms.")
 
     if args.train:
         TIMER.start()
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         TIMER.stop()
 
         if args.verbose:
-            TIMER.print("Training took {}ms.")
+            TIMER.print("Training took {} ms.")
 
     if args.predict:
         sw = SlidingWindow( CONFIG["WINDOW"]["window_size"],
@@ -76,15 +76,14 @@ if __name__ == "__main__":
             TIMER.stop()
             
             if args.verbose:
-                TIMER.print("Prediction took {}ms.")
+                TIMER.print("Prediction took {} ms.")
 
                 # DISPLAY
                 im = cv2.imread(image)
-                clone = im.copy()
                 for (x_tl, y_tl, _, w, h) in result:
-                    cv2.rectangle(clone, (int(x_tl), int(y_tl)), (int(x_tl+w), int(y_tl+h)), (0, 0, 255), thickness=2)
-                cv2.imshow("Original", im)
-                cv2.imshow("Detection", clone)
+                    cv2.rectangle(im, (int(x_tl), int(y_tl)), (int(x_tl+w), int(y_tl+h)), (0, 0, 255), thickness=2)
+                cv2.imshow("Detection", im)
+
                 if cv2.waitKey() & 0xFF == ord('q'):
                     cv2.destroyAllWindows()
                     break

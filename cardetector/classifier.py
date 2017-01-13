@@ -47,7 +47,7 @@ class Classifier(object):
         self.__save__(self._model_path)
 
     def predict(self, image_path, feature_extractor, **kwargs):
-        image = imread(image_path, as_grey=False)
+        image = imread(image_path, as_grey=True)
         scale = 0
         sliding_window = kwargs.get("sliding_window", SlidingWindow(image.shape, (0,0)))
         downscale = kwargs.get("downscale", 1.25)
@@ -78,16 +78,4 @@ class Classifier(object):
         
         detections = nms(np.array(detections), threshold)
         return detections
-        
 
-
-
-if __name__ == "__main__":
-    # Example
-    p = "../data/features/pos"
-    n = "../data/features/neg"
-    m = "../data/models/svm.model"
-    i = "../data/dataset/CarData/TestImages/test-16.pgm"
-    c = Classifier(posfeatpath=p, negfeatpath=n, classifier="LIN_SVM", model_path=m)
-
-    c.train()

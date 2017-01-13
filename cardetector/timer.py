@@ -12,3 +12,4 @@ class Timer(object):
 
     def print(self, msg):
         print(msg.format(self._duration))
+
