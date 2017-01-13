@@ -3,6 +3,7 @@ from skimage.io import imread
 from sklearn.externals import joblib
 import numpy as np
 import glob
+import sys
 import os
 
 class FeaturesExtractor(object):
@@ -35,7 +36,12 @@ class FeaturesExtractor(object):
             os.makedirs(dir_path)
 
     def __compute__(self, dir_path, feat_path):
-        for im_path in glob.glob(os.path.join(dir_path, "*")):
+        files = glob.glob(os.path.join(dir_path, "*"))
+        
+        if len(files) <= 0:
+            sys.exit("[ERROR] No files in \"{}\".".format(dir_path))
+        
+        for im_path in files:
             im = imread(im_path, as_grey=True)
             fd = self.__descriptor__(im)
             fd_name = os.path.split(im_path)[1].split(".")[0] + ".feat"

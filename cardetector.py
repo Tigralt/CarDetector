@@ -7,6 +7,7 @@ from cardetector.slidingwindow import SlidingWindow
 from cardetector.timer import Timer
 import argparse
 import glob
+import sys
 import cv2
 import os
 
@@ -67,8 +68,7 @@ if __name__ == "__main__":
         elif os.path.isfile(args.predict):
             images = [args.predict]
         else:
-            print("[ERROR] The path to predict is neither a dir nor a file!")
-            exit()
+            sys.exit("[ERROR] The path to predict is neither a dir nor a file!")
 
         for image in images:
             TIMER.start()

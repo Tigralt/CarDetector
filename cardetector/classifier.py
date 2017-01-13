@@ -8,6 +8,7 @@ from cardetector.slidingwindow import SlidingWindow
 from cardetector.nms import nms
 import numpy as np
 import glob
+import sys
 import os
 
 class Classifier(object):
@@ -22,12 +23,20 @@ class Classifier(object):
         self._model_path = kwargs.get("model_path")
 
     def __load_features__(self, path, response):
-        for feat_path in glob.glob(os.path.join(path,"*.feat")):
+        features = glob.glob(os.path.join(path,"*.feat"))
+
+        if len(features) <= 0:
+            sys.exit("[ERROR] No features file in \"{}\". Did you forget to extract them?".format(path))
+
+        for feat_path in features:
             fd = joblib.load(feat_path)
             self._fds.append(fd)
             self._labels.append(response)
 
     def __load__(self, model_path):
+        if not os.path.isfile(path):
+            sys.exit("[ERROR] No classifier model at \"{}\". Did you forget to train it?".format(model_path))
+
         self._clf = joblib.load(model_path)
 
     def __train__(self):
