@@ -31,8 +31,8 @@ optional arguments:
 #### Download the UUIC Car Database
 
 ```
-wget http://l2r.cs.uiuc.edu/~cogcomp/Data/Car/CarData.tar.gz
-tar -xzvf CarData.tar.gz
+$ wget http://l2r.cs.uiuc.edu/~cogcomp/Data/Car/CarData.tar.gz
+$ tar -xzvf CarData.tar.gz
 ```
 
 #### Extract features from images
