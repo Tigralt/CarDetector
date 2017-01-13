@@ -2,6 +2,9 @@
 An object detector framework optimized for car detection.
 This framework is based on the work of [**bikz05**](https://github.com/bikz05/object-detector.git)
 
+The database used for this project is the [**UUIC Car Database**](http://cogcomp.cs.illinois.edu/Data/Car/README.txt).
+You can download it [here](http://l2r.cs.uiuc.edu/~cogcomp/Data/Car/CarData.tar.gz)
+
 ## Basic Usage
 
 ```shell
@@ -25,6 +28,13 @@ optional arguments:
                         Select the classifier to be used
 ```
 ### Examples
+#### Download the UUIC Car Database
+
+```
+wget http://l2r.cs.uiuc.edu/~cogcomp/Data/Car/CarData.tar.gz
+tar -xzvf CarData.tar.gz
+```
+
 #### Extract features from images
 
 ```
@@ -41,13 +51,13 @@ $ ./cardetector.py -t
 
 If you want to predict only one image:
 ```
-$ ./cardetetory -p data/dataset/test/my-image.pgm -v
+$ ./cardetetory -p data/dataset/car/test/test-0.pgm
 ```
 
 If you want to predict all images from a directory, simply use the directory path then press any key to continue after the image is pressed.
 You can also press **q** to quit while the prediction.
 ```
-$ ./cardetetory -p data/dataset/test -v
+$ ./cardetetory -p data/dataset/cat/test -v
 ```
 
 The `-v` parameter is important here, it's thanks to him that the script will display the picture.
