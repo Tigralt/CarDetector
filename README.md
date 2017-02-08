@@ -51,13 +51,13 @@ $ ./cardetector.py -t
 
 If you want to predict only one image:
 ```
-$ ./cardetetory -p data/dataset/car/test/test-0.pgm
+$ ./cardetector.py -p data/dataset/car/test/test-0.pgm
 ```
 
 If you want to predict all images from a directory, simply use the directory path then press any key to continue after the image is pressed.
 You can also press **q** to quit while the prediction.
 ```
-$ ./cardetetory -p data/dataset/cat/test -v
+$ ./cardetector.py -p data/dataset/cat/test -v
 ```
 
 The `-v` parameter is important here, it's thanks to him that the script will display the picture.
