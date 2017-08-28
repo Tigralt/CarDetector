@@ -34,7 +34,7 @@ class Classifier(object):
             self._labels.append(response)
 
     def __load__(self, model_path):
-        if not os.path.isfile(path):
+        if not os.path.isfile(model_path):
             sys.exit("[ERROR] No classifier model at \"{}\". Did you forget to train it?".format(model_path))
 
         self._clf = joblib.load(model_path)

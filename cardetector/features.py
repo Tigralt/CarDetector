@@ -52,11 +52,10 @@ class FeaturesExtractor(object):
         switch = {
             "HOG" : hog(
                 image,
-                self._params["orientations"],
-                self._params["pixels_per_cell"],
-                self._params["cells_per_block"],
-                self._params["visualize"],
-                self._params["normalize"] ),
+                orientations = self._params["orientations"],
+                pixels_per_cell = self._params["pixels_per_cell"],
+                cells_per_block = self._params["cells_per_block"],
+                visualise = self._params["visualize"])
             }
         return switch.get(self._descriptor_type)
 
